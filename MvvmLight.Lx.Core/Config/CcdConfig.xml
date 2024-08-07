@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ccdinfos>
+	<ccdinfo Type="松下" Id="1">
+		<ip>127.0.0.1</ip>
+		<port>502</port>
+		<model>CCD1234</model>
+		<manufacturer>ExampleCorp</manufacturer>
+		<pixelSize>
+			<width units="microns">6.5</width>
+			<height units="microns">6.5</height>
+		</pixelSize>
+		<pixelArray>
+			<width>2048</width>
+			<height>2048</height>
+		</pixelArray>
+		<sensitivity units="%">70</sensitivity>
+		<spectralResponseRange>
+			<min units="nm">400</min>
+			<max units="nm">700</max>
+		</spectralResponseRange>
+		<readoutNoise units="e-">3.5</readoutNoise>
+		<darkCurrent units="e-/s">0.01</darkCurrent>
+		<dynamicRange units="dB">70</dynamicRange>
+		<interfaceType>Camera Link</interfaceType>
+		<powerRequirements>
+			<voltage units="V">12</voltage>
+			<current units="A">0.5</current>
+		</powerRequirements>
+		<operatingTemperatureRange>
+			<min units="C">-20</min>
+			<max units="C">70</max>
+		</operatingTemperatureRange>
+		<softwareCompatibility>ExampleSoftware v1.0</softwareCompatibility>
+	</ccdinfo>
+</ccdinfos>

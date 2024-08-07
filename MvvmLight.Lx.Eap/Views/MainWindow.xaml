@@ -1,0 +1,44 @@
+﻿<Window
+    x:Class="MvvmLight.Lx.Eap.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:MvvmLight.Lx.Controls.Views;assembly=MvvmLight.Lx.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:local="clr-namespace:MvvmLight.Lx.Eap.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mvvm="clr-namespace:MvvmLight.Lx.Controls.Mvvm;assembly=MvvmLight.Lx.Controls"
+    xmlns:shell="clr-namespace:MvvmLight.Lx.Controls.Views;assembly=MvvmLight.Lx.Controls"
+    xmlns:viewModel="clr-namespace:MvvmLight.Lx.Eap.ViewModels"
+    Title="MainWindow"
+    Width="1200"
+    Height="850"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid>
+        <!--分为上中下三层，中间又分为两列-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <shell:HeaderView/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="400"/>
+            </Grid.ColumnDefinitions>
+            <controls:HomeView />
+
+            <controls:RightTableView Grid.Column="1" HorizontalAlignment="Right"/>
+
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <controls:FooterView />
+        </Grid>
+
+    </Grid>
+</Window>

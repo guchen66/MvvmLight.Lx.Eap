@@ -1,0 +1,29 @@
+﻿<UserControl
+    x:Class="MvvmLight.Lx.Controls.Views.HeaderView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MvvmLight.Lx.Controls.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="600"
+    mc:Ignorable="d">
+    <ListBox
+        x:Name="list"
+        Height="80"
+        ItemsSource="{Binding CreateWindowFromHeader}"
+        Style="{DynamicResource WrapPanelHorizontalListBox}">
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <Border Margin="5,0" BorderThickness="1">
+                    <DockPanel LastChildFill="True">
+                        <Button
+                            Height="60"
+                            Command="{Binding DataContext.OpenManualTestCommand, ElementName=list}"
+                            CommandParameter="{Binding NavigatToView}"
+                            Content="{Binding HeaderName}" />
+                    </DockPanel>
+                </Border>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+    </ListBox>
+</UserControl>

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C31BBA4-E94C-4511-A5C0-23AB1F9698A3}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>MvvmLight.Lx.Core</RootNamespace>
+    <AssemblyName>MvvmLight.Lx.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Devices\Clients\CcdClient.cs" />
+    <Compile Include="Devices\Clients\ControlCardClient.cs" />
+    <Compile Include="Devices\Clients\PlcClient.cs" />
+    <Compile Include="Devices\Clients\RfidClient.cs" />
+    <Compile Include="Devices\Clients\ScanCodeClient.cs" />
+    <Compile Include="Devices\DeviceResponseResult.cs" />
+    <Compile Include="Devices\Infos\CCDInfo.cs" />
+    <Compile Include="Devices\Infos\ControlCardInfo.cs" />
+    <Compile Include="Devices\Infos\HardwareBase.cs" />
+    <Compile Include="Devices\Infos\PlcInfo.cs" />
+    <Compile Include="Devices\Infos\RfidInfo.cs" />
+    <Compile Include="Devices\Infos\ScanCodeInfo.cs" />
+    <Compile Include="Devices\PlcBackResult.cs" />
+    <Compile Include="Dtos\HeaderInfoDto.cs" />
+    <Compile Include="Dtos\LoginDto.cs" />
+    <Compile Include="Dtos\StudentDto.cs" />
+    <Compile Include="Extensions\ConfigurationExtension.cs" />
+    <Compile Include="Extensions\EventAggregator.cs" />
+    <Compile Include="Extensions\ResourceExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\ViewModelServiceLocator.cs" />
+    <Compile Include="Extensions\WinExtension.cs" />
+    <Compile Include="Globals\LeftStationData.cs" />
+    <Compile Include="Globals\SysPlc.cs" />
+    <Compile Include="Handlers\DataBaseOrTableHandler.cs" />
+    <Compile Include="Handlers\SimpleHandler.cs" />
+    <Compile Include="Helpsers\IniHelper.cs" />
+    <Compile Include="Helpsers\IPHelper.cs" />
+    <Compile Include="Helpsers\XmlHelper.cs" />
+    <Compile Include="Messengers\LoginMessanger.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="AppConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\ScanCodeConfig.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\setting.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm">
+      <Version>8.2.2</Version>
+    </PackageReference>
+    <PackageReference Include="HslCommunication">
+      <Version>12.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="NewLife.Core">
+      <Version>10.10.2024.601</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="NModbus4">
+      <Version>2.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Configuration.ConfigurationManager">
+      <Version>8.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Unity">
+      <Version>5.11.10</Version>
+    </PackageReference>
+    <PackageReference Include="Unity.Interception">
+      <Version>5.11.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Factorys\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Config\CcdConfig.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

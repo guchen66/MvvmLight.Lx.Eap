@@ -1,0 +1,18 @@
+{
+  "MvvmDbContext": {
+    "CreateDataBase": false,
+    "CreateTable": false
+  },
+  /**自动生成数据**/
+  "GeneratorData": {
+    "Title": "SqlServer",
+    "IsGenerator": "false", //初始化数据库和表格
+    "IsSeedData": "false" //自动生成表数据
+  },
+  /**RFID的型号，IP**/
+  "RFId": {
+    "RFIdType": "西门子",
+    "Ip": "127.0.0.1",
+    "Port": "502"
+  }
+}

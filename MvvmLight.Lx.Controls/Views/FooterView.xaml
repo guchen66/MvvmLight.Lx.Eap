@@ -1,0 +1,52 @@
+﻿<UserControl
+    x:Class="MvvmLight.Lx.Controls.Views.FooterView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:conver="clr-namespace:MvvmLight.Lx.Controls.Converters"
+    xmlns:valueConverter="clr-namespace:ValueConverters;assembly=ValueConverters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:global="clr-namespace:MvvmLight.Lx.Core.Globals;assembly=MvvmLight.Lx.Core"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:local="clr-namespace:MvvmLight.Lx.Controls.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <conver:ConnectionStateToColorConverter x:Key="deviceState" />
+        <valueConverter:BoolToVisibilityConverter x:Key="boolToVisible"/>
+    </UserControl.Resources>
+    <StackPanel Orientation="Horizontal">
+
+        <Button
+            x:Name="plc"
+            Width="180"
+            Height="26"
+            Background="{Binding PlcInfo.IsConn, Converter={StaticResource deviceState}}"
+            Content="{Binding PlcInfo.PlcName}" Visibility="{Binding IsVisible,Converter={StaticResource boolToVisible}}"/>
+        <Button
+            x:Name="ccd"
+            Width="180"
+            Height="26"
+            Background="{Binding CCDInfo.IsConn, Converter={StaticResource deviceState}}"
+            Content="{Binding CCDInfo.CCDName}" />
+        <Button
+            x:Name="rfid"
+            Width="180"
+            Height="26"
+            Background="{Binding RfidInfo.IsConn, Converter={StaticResource deviceState}}"
+            Content="{Binding RfidInfo.RfidName}" />
+        <Button
+            x:Name="scan"
+            Width="180"
+            Height="26"
+            Background="{Binding ScanCodeInfo.IsConn, Converter={StaticResource deviceState}}"
+            Content="{Binding ScanCodeInfo.ScanCodeName}" />
+        <Button
+            x:Name="card"
+            Width="180"
+            Height="26"
+            Background="{Binding ControlCardInfo.IsConn, Converter={StaticResource deviceState}}"
+            Content="{Binding ControlCardInfo.CardName}" />
+    </StackPanel>
+</UserControl>

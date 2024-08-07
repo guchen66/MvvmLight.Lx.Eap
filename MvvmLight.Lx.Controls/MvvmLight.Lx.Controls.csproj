@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{98C10702-81F9-44E7-8D71-DAD2D052212A}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>MvvmLight.Lx.Controls</RootNamespace>
+    <AssemblyName>MvvmLight.Lx.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behaviors\PasswordBoxBindingBehavior.cs" />
+    <Compile Include="Behaviors\PasswordBoxProvider.cs" />
+    <Compile Include="Behaviors\TreeHelper.cs" />
+    <Compile Include="Converters\ConnectionStateToColorConverter.cs" />
+    <Compile Include="Converters\LoginInfoConverter.cs" />
+    <Compile Include="Dialogs\WinDialogBase.cs" />
+    <Compile Include="Mvvm\BaseViewModel.cs" />
+    <Compile Include="Mvvm\WindowFactory.cs" />
+    <Compile Include="Mvvm\ViewFactory.cs" />
+    <Compile Include="Prisms\NavigationContext.cs" />
+    <Compile Include="Prisms\NavigationResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Shell\ViewModels\PlcDebugerWindowViewModel.cs" />
+    <Compile Include="Shell\ViewModels\RfidWindowViewModel.cs" />
+    <Compile Include="Shell\Views\PlcDebugerWindow.xaml.cs">
+      <DependentUpon>PlcDebugerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\Views\RfidWindow.xaml.cs">
+      <DependentUpon>RfidWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\Views\ScanCodeWindow.xaml.cs">
+      <DependentUpon>ScanCodeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\FooterViewModel.cs" />
+    <Compile Include="ViewModels\HeaderViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\ProductViewModel.cs" />
+    <Compile Include="ViewModels\RightTableViewModel.cs" />
+    <Compile Include="Views\FooterView.xaml.cs">
+      <DependentUpon>FooterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HeaderView.xaml.cs">
+      <DependentUpon>HeaderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductView.xaml.cs">
+      <DependentUpon>ProductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RightTableView.xaml.cs">
+      <DependentUpon>RightTableView.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm">
+      <Version>8.2.2</Version>
+    </PackageReference>
+    <PackageReference Include="HandyControl">
+      <Version>3.5.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf">
+      <Version>1.1.122</Version>
+    </PackageReference>
+    <PackageReference Include="MiniExcel">
+      <Version>1.32.1</Version>
+    </PackageReference>
+    <PackageReference Include="Unity">
+      <Version>5.11.10</Version>
+    </PackageReference>
+    <PackageReference Include="ValueConverters">
+      <Version>3.0.26</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvvmLight.Lx.Admin\MvvmLight.Lx.Admin.csproj">
+      <Project>{5216fcec-233b-483a-b8d9-d266762c2576}</Project>
+      <Name>MvvmLight.Lx.Admin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvvmLight.Lx.Core\MvvmLight.Lx.Core.csproj">
+      <Project>{2c31bba4-e94c-4511-a5c0-23ab1f9698a3}</Project>
+      <Name>MvvmLight.Lx.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvvmLight.Lx.DbAccess\MvvmLight.Lx.DbAccess.csproj">
+      <Project>{2f21f6ba-1479-405e-803d-3906a376bd12}</Project>
+      <Name>MvvmLight.Lx.DbAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvvmLight.Lx.Devices\MvvmLight.Lx.Devices.csproj">
+      <Project>{1c4d54a8-d223-4fa0-bc35-a8c64b137084}</Project>
+      <Name>MvvmLight.Lx.Devices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Shell\Views\PlcDebugerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell\Views\RfidWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell\Views\ScanCodeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FooterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HeaderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RightTableView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
